@@ -1445,11 +1445,6 @@ void ESP_Mail_Client::altSendStorageErrorCB(SMTPSession *smtp, int err)
 #if !defined(SILENT_MODE)
         if (imap->_statusCallback)
             esp_mail_debug_print_tag(esp_mail_error_mem_str_3 /* "file does not exist or can't access" */, esp_mail_debug_tag_type_client, true);
-
-        if (imap->_debug)
-        {
-            esp_mail_debug_print_tag(smtp->errorReason().c_str(), esp_mail_debug_tag_type_error, true);
-        }
 #endif
 #endif
     }
