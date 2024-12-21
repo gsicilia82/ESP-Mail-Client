@@ -328,7 +328,7 @@ public:
 #if defined(ESP32)
 
 #if defined(MBFS_FORMAT_FLASH)
-        flash_rdy = MBFS_FLASH_FS.begin(true);
+        flash_rdy = MBFS_FLASH_FS.begin(true, "");
 #else
         flash_rdy = MBFS_FLASH_FS.begin();
 #endif
@@ -932,7 +932,7 @@ private:
     bool flash_opened = false;
     bool sd_opened = false;
     bool sd_rdy = false;
-    bool flash_rdy = false;
+    bool flash_rdy = true;
     uint16_t loopCount = 0;
 
 #if defined(MBFS_FLASH_FS)
